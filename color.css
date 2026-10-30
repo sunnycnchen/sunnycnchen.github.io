@@ -5,3 +5,8 @@ div {
   margin: 2px;
   box-shadow: 0 0 12px grey;
 }
+
+  <h1 style="background-color:lightblue; border-style: double; border-width: 3px; border-color: red;">Hello World</h1>
+  <h1 style="background-color:yellow; border: 2x solid blue; border-radius: 8px; padding: 5px;">Hello World</h1>
+  <h1 style="background-color:rgb(70,166,110); border-style: dotted; border-width: 10px; border-color: grey;">Hello World</h1>
+  
