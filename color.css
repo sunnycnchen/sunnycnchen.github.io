@@ -5,15 +5,3 @@ div {
   margin: 2px;
   box-shadow: 0 0 12px grey;
 }
-
-h1.one {
-  background-color:lightblue; border-style: double; border-width: 8px; border-color: red;
-}
-
-h1.two {
-  background-color:yellow; border: 5px solid blue; border-radius: 8px; padding: 5px;
-}
-
-h1.three {
-  background-color:rgb(70,166,110); border-style: dotted; border-width: 10px; border-color: grey;
-}
