@@ -3,11 +3,3 @@ div {
   margin: 2px;
   box-shadow: 0 0 8px black;
 }
-
-<div>
-
-  <h1 style="background-color:lightblue; border-style: double; border-width: medium; border-color: red;">Hello World</h1>
-  <h2 style="background-color:yellow; border-radius: 15px; border-width: 2px; border-color: blue;">Hello World</h2>
-  <h3 style="background-color:green; border-style: dotted; border-width: 5px; border-color: grey;">Hello World</h3>
-
-</div>
