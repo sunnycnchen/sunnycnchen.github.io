@@ -12,9 +12,9 @@ div h1 {
 }
 
 div h2 {
-  font-style: italic;
   outline-style: outset;
   outline-color: yellow;
+  font-style: italic;
 }
 
 div h3 {
