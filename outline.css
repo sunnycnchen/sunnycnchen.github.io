@@ -12,6 +12,7 @@ div h1 {
 }
 
 div h2 {
+  border: 1px solid black;
   outline-style: outset;
   outline-color: yellow;
   font-style: italic;
