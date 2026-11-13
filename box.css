@@ -1,4 +1,4 @@
-.box1 {
+div {
   width: 100px;
   height: 100px;
   padding: 10px;
@@ -12,12 +12,6 @@
   background-color: pink;
 }
 
-.box2 {
-  width: 100px;
-  height: 100px;
-  padding: 10px;
-  background-color: pink;
-}
 
 .box2:hover {
   width: 200px;
