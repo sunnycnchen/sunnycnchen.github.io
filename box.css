@@ -1,1 +1,11 @@
+.box {
+  width: 100px;
+  height: 100px;
+  color: pink;
+}
 
+.box:hover {
+  width: 600px;
+  height: 100px;
+  color: pink;
+}
