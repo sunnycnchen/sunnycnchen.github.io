@@ -3,10 +3,11 @@ div {
   height: 100px;
   padding: 10px;
   background-color: pink;
+  margin: 30px;
 }
 
 .box1:hover {
-  width: 600px;
+  width: 670px;
   height: 100px;
   padding: 10px;
   background-color: pink;
@@ -14,8 +15,8 @@ div {
 
 
 .box2:hover {
-  width: 200px;
-  height: 200px;
+  width: 335px;
+  height: 335px;
   padding: 10px;
   background-color: pink;
 }
