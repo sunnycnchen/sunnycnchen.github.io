@@ -2,237 +2,319 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sunny Chen | Personal Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sunny Chen</title>
     <style>
         :root {
-            --background: #070a12;
-            --panel: #0c121e;
-            --cyan: #45f3ff;
-            --pink: #ff477e;
-            --lime: #d7ff5f;
-            --text: #e6f4f7;
-            --muted: #91a7b5;
+            color-scheme: light;
+            font-family: Helvetica, Arial, sans-serif;
         }
 
         * {
             box-sizing: border-box;
         }
 
+        html,
         body {
-            min-height: 100vh;
+            min-height: 100%;
+        }
+
+        body {
             margin: 0;
-            display: grid;
-            place-items: center;
-            overflow-x: hidden;
-            color: var(--text);
-            font-family: "Trebuchet MS", Arial, sans-serif;
             background:
-                radial-gradient(ellipse at 18% 20%, rgba(255, 71, 126, 0.13), transparent 28rem),
-                radial-gradient(ellipse at 82% 78%, rgba(69, 243, 255, 0.12), transparent 30rem),
-                linear-gradient(rgba(69, 243, 255, 0.035) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(69, 243, 255, 0.035) 1px, transparent 1px),
-                var(--background);
-            background-size: auto, auto, 42px 42px, 42px 42px, auto;
+                radial-gradient(circle at 20% 30%, rgb(81 104 91 / 15%) 0 0.65px, transparent 0.75px),
+                radial-gradient(circle at 70% 60%, rgb(81 104 91 / 11%) 0 0.55px, transparent 0.65px),
+                #f4f6f2;
+            background-size: 4px 4px, 5px 5px, auto;
+            color: #111114;
         }
 
-        body::before,
-        body::after {
-            content: "";
-            position: fixed;
-            z-index: -1;
-            width: 18rem;
-            height: 18rem;
-            border: 1px solid rgba(69, 243, 255, 0.16);
-            box-shadow: 0 0 50px rgba(69, 243, 255, 0.06), inset 0 0 50px rgba(69, 243, 255, 0.04);
-            transform: rotate(45deg) skew(-8deg, -8deg);
-        }
-
-        body::before {
-            top: -13rem;
-            left: -13rem;
-            border-color: rgba(255, 71, 126, 0.2);
-        }
-
-        body::after {
-            right: -13rem;
-            bottom: -13rem;
-        }
-
-        main {
-            width: min(42rem, calc(100% - 2rem));
-            position: relative;
-            padding: 3.5rem 3rem;
-            text-align: center;
-            border: 1px solid rgba(69, 243, 255, 0.7);
-            background: linear-gradient(145deg, rgba(12, 18, 30, 0.96), rgba(7, 10, 18, 0.94));
-            box-shadow:
-                0 0 0 5px var(--background),
-                0 0 0 6px rgba(255, 71, 126, 0.42),
-                0 0 32px rgba(69, 243, 255, 0.14),
-                0 24px 70px rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(10px);
-        }
-
-        .sigil {
-            width: 5rem;
-            height: 5rem;
-            margin: 0 auto 1.5rem;
+        .page {
+            min-height: 100svh;
             display: grid;
             place-items: center;
-            border: 1px solid var(--cyan);
-            border-radius: 12px;
-            color: var(--cyan);
-            font: 700 1.55rem/1 "Trebuchet MS", sans-serif;
-            letter-spacing: 0.06em;
-            box-shadow:
-                inset 0 0 0 4px var(--panel),
-                inset 0 0 0 5px rgba(69, 243, 255, 0.35),
-                0 0 26px rgba(69, 243, 255, 0.2),
-                5px 5px 0 rgba(255, 71, 126, 0.5);
+            padding: 48px 20px 54px;
         }
 
-        .eyebrow {
-            margin: 0 0 0.6rem;
-            color: var(--cyan);
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
+        .card {
+            position: relative;
+            width: min(310px, calc(100vw - 40px));
+            min-height: 492px;
+            overflow: hidden;
+            padding: 50px 33px 27px;
+            border-radius: 11px;
+            background:
+                linear-gradient(rgb(216 224 211 / 72%), rgb(216 224 211 / 72%)),
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.78' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");
+            background-size: auto, 90px 90px;
+            box-shadow:
+                0 18px 45px rgb(25 25 25 / 10%),
+                0 2px 8px rgb(25 25 25 / 5%);
+            text-align: center;
+        }
+
+        .contact-view {
+            display: none;
+        }
+
+        .card.show-contact .home-view {
+            display: none;
+        }
+
+        .card.show-contact {
+            min-height: 0;
+        }
+
+        .card.show-contact .contact-view {
+            display: block;
+        }
+
+        .portrait-link {
+            display: block;
+            width: 243px;
+            max-width: 100%;
+            aspect-ratio: 243 / 294;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #121820;
+        }
+
+        .portrait {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .lock-button {
+            display: grid;
+            width: 24px;
+            height: 24px;
+            margin: 20px auto 8px;
+            place-items: center;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: #12151a;
+            cursor: pointer;
+        }
+
+        .lock-button svg {
+            width: 17px;
+            height: 17px;
+            stroke-width: 2.2;
+        }
+
+        .lock-button:focus-visible,
+        .back-button:focus-visible,
+        a:focus-visible {
+            outline: 2px solid #101014;
+            outline-offset: 5px;
         }
 
         h1 {
             margin: 0;
-            color: #f4fcff;
-            font-family: "Arial Black", "Trebuchet MS", sans-serif;
-            font-size: clamp(2.8rem, 10vw, 5.4rem);
-            font-weight: 900;
-            line-height: 0.94;
-            letter-spacing: 0.035em;
-            text-transform: uppercase;
-            text-shadow: 3px 3px 0 rgba(255, 71, 126, 0.7), -2px -2px 18px rgba(69, 243, 255, 0.28);
+            font-size: 18px;
+            line-height: 1.25;
+            letter-spacing: 1.1px;
+            font-weight: 800;
         }
 
-        .title {
-            margin: 1.1rem 0 2.2rem;
-            color: var(--lime);
-            font: 700 0.82rem/1.5 "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+        .home-view h1 {
+            font-size: 18px;
+            letter-spacing: 1.4px;
+        }
+
+        .home-view h1 em {
+            font-size: inherit;
+            font-weight: 800;
+        }
+
+        .subtitle {
+            margin: 10px 0 16px;
+            font-size: 11px;
+            font-style: italic;
+            font-weight: 700;
+            letter-spacing: 2.1px;
+            text-align: center;
         }
 
         .divider {
-            width: 6.5rem;
-            height: 1px;
-            margin: 0 auto 2rem;
-            background: linear-gradient(90deg, transparent, var(--cyan), var(--pink), transparent);
-            box-shadow: 0 0 14px rgba(69, 243, 255, 0.5);
+            width: 100%;
+            height: 1.5px;
+            margin: 0 auto 15px;
+            background: #15171a;
         }
 
-        .contacts {
+        .hint {
+            margin: 0;
+            font-size: 11px;
+            letter-spacing: 1.3px;
+        }
+
+        .contact-view {
+            min-height: 0;
+            text-align: left;
+        }
+
+        .contact-title {
+            margin: 0 0 22px;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            text-transform: lowercase;
+        }
+
+        .contact-list {
             display: grid;
-            gap: 0.75rem;
-            max-width: 26rem;
-            margin: 0 auto;
+            margin: 0;
+            padding: 0;
+            list-style: none;
         }
 
-        .contact {
-            min-height: 2.9rem;
+        .contact-list li {
+            border-top: 1.5px solid #15171a;
+        }
+
+        .contact-list li:last-child {
+            border-bottom: 1.5px solid #15171a;
+        }
+
+        .contact-list a,
+        .contact-list li>span {
             display: flex;
+            min-height: 36px;
             align-items: center;
-            justify-content: center;
-            padding: 0.65rem 1rem;
-            border: 1px solid rgba(69, 243, 255, 0.28);
-            background: rgba(69, 243, 255, 0.025);
-            color: var(--text);
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-            font-size: 0.92rem;
+            justify-content: space-between;
+            color: #101014;
             text-decoration: none;
-            transition: border-color 180ms ease, color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
         }
 
-        .contact:hover,
-        .contact:focus-visible {
-            border-color: var(--cyan);
-            color: var(--background);
-            background: var(--cyan);
-            outline: none;
-            transform: translateY(-2px);
-            box-shadow: 0 0 18px rgba(69, 243, 255, 0.35);
+        .contact-label {
+            font-size: 11px;
+            font-style: italic;
+            letter-spacing: 1px;
         }
 
-        .label {
-            margin-right: 0.55rem;
-            color: var(--pink);
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-            font-size: 0.68rem;
+        .contact-value {
+            font-size: 11px;
             font-weight: 700;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            letter-spacing: 0.4px;
         }
 
-        .contact:hover .label,
-        .contact:focus-visible .label {
-            color: var(--background);
+        .back-button {
+            display: block;
+            margin: 19px auto 0;
+            padding: 8px 12px;
+            border: 1.5px solid #15171a;
+            border-radius: 0;
+            background: transparent;
+            color: #101014;
+            font: 700 12px/1 Helvetica, Arial, sans-serif;
+            letter-spacing: 1.2px;
+            cursor: pointer;
         }
 
-        @media (max-width: 520px) {
-            body {
-                place-items: start center;
-                padding: 1.25rem 0;
+        @media (max-width: 680px) {
+            .page {
+                align-items: start;
+                padding: 24px 14px 48px;
             }
 
-            main {
-                width: calc(100% - 1.5rem);
-                padding: 2.75rem 1.25rem;
+            .card {
+                width: min(310px, calc(100vw - 28px));
+                min-height: 492px;
+                padding: 50px 33px 27px;
             }
 
-            .contact {
+            .portrait-link {
+                width: 100%;
+            }
+
+            .lock-button {
+                margin-top: 8px;
+            }
+
+            .contact-view {
+                min-height: 0;
+            }
+
+            .contact-list a,
+            .contact-list li>span {
                 align-items: flex-start;
                 flex-direction: column;
-                text-align: left;
-            }
-
-            .label {
-                margin: 0 0 0.25rem;
+                justify-content: center;
+                gap: 5px;
             }
         }
     </style>
 </head>
 
 <body>
-    <main>
-        <div class="sigil" aria-hidden="true">SC</div>
-        <p class="eyebrow">Personal Profile</p>
-        <h1>Sunny Chen</h1>
-        <div class="divider" aria-hidden="true"></div>
+    <main class="page">
+        <article class="card" id="card">
+            <section class="home-view" aria-label="Sunny Chen senior will">
+                <a class="portrait-link" href="https://www.tiktok.com/@laefeysun" target="_blank" rel="noopener"
+                    aria-label="Visit Sunny's TikTok">
+                    <img class="portrait" src="sunny-contact.jpg" alt="An illustrated couple embracing">
+                </a>
 
-        <nav class="contacts" aria-label="Contact and social links">
-            <a class="contact" href="mailto:sunnycnchen@gmail.com">
-                <span class="label">Email</span>
-                sunnycnchen@gmail.com
-            </a>
-            <a class="contact" href="tel:+886902182635">
-                <span class="label">Phone</span>
-                0902-182-635
-            </a>
-            <a class="contact" href="https://instagram.com/sunnysienchen" target="_blank" rel="noopener noreferrer">
-                <span class="label">Instagram</span>
-                @sunnysienchen
-            </a>
-            <a class="contact" href="https://www.tiktok.com/@laefeysun" target="_blank" rel="noopener noreferrer">
-                <span class="label">TikTok</span>
-                @laefeysun
-            </a>
-            <a class="contact" href="https://www.goodreads.com/user/show/185167760-sunny" target="_blank"
-                rel="noopener noreferrer">
-                <span class="label">Goodreads</span>
-                View my reading list
-            </a>
-        </nav>
+                <button class="lock-button" id="lockButton" type="button" aria-label="Show contact information"
+                    aria-expanded="false">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <rect x="4" y="10" width="16" height="11" rx="1.5"></rect>
+                        <path d="M7.5 10V7a4.5 4.5 0 0 1 9 0v3"></path>
+                    </svg>
+                </button>
+
+                <h1>sunny chen<em>!</em></h1>
+                <p class="subtitle">1143725</p>
+                <div class="divider"></div>
+                <p class="hint">click on the lock.</p>
+            </section>
+
+            <section class="contact-view" aria-label="Contact information" aria-hidden="true">
+                <h1 class="contact-title">sunny chen<em>!</em></h1>
+                <ul class="contact-list">
+                    <li><span><span class="contact-label">number</span><span
+                                class="contact-value">0902-182-635</span></span></li>
+                    <li><a href="mailto:sunnycnchen@gmail.com"><span class="contact-label">email</span><span
+                                class="contact-value">sunnycnchen@gmail.com</span></a></li>
+                    <li><a href="https://www.tiktok.com/@laefeysun" target="_blank" rel="noopener"><span
+                                class="contact-label">tiktok</span><span class="contact-value">laefeysun</span></a></li>
+                    <li><a href="https://www.instagram.com/sunnysienchen" target="_blank" rel="noopener"><span
+                                class="contact-label">instagram</span><span
+                                class="contact-value">sunnysienchen</span></a></li>
+                </ul>
+                <button class="back-button" id="backButton" type="button">back</button>
+            </section>
+        </article>
     </main>
+
+    <script>
+        const card = document.getElementById("card");
+        const lockButton = document.getElementById("lockButton");
+        const backButton = document.getElementById("backButton");
+        const contactView = card.querySelector(".contact-view");
+
+        function showContact(show) {
+            card.classList.toggle("show-contact", show);
+            lockButton.setAttribute("aria-expanded", String(show));
+            contactView.setAttribute("aria-hidden", String(!show));
+            if (!show) lockButton.focus();
+        }
+
+        lockButton.addEventListener("click", () => showContact(true));
+        backButton.addEventListener("click", () => showContact(false));
+        document.addEventListener("keydown", (event) => {
+            if (event.key === "Escape" && card.classList.contains("show-contact")) {
+                showContact(false);
+            }
+        });
+    </script>
 </body>
 
 </html>
